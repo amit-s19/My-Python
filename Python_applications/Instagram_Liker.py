@@ -49,6 +49,7 @@ class InstagramBot:
 
 
 
-Test = InstagramBot('__i.am.666__', 'blade dl1ch8686')
+Test = InstagramBot('Enter your username here', 'Enter your password here')
 Test.login()
-Test.like_picture("Satanism")
+hashtags = ['Enter all your hashtags here example : dark, gothic, satanist, etc']
+Test.like_picture(elem) for elem in hashtags
