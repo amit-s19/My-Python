@@ -49,7 +49,39 @@ class InstagramBot:
 
 
 
-Test = InstagramBot('Enter your username here', 'Enter your password here')
-Test.login()
-hashtags = ['Enter all your hashtags here example : dark, gothic, satanist, etc']
-Test.like_picture(elem) for elem in hashtags
+#Test = InstagramBot('__i.am.666__', 'blade dl1ch8686')
+#Test.login()
+#hashtags = ['fitness', 'gym']
+#for elem in hashtags :
+#    Test.like_picture(elem)
+
+
+print(''' INSTAGRAM BOT ''')
+Username = str(raw_input('Enter the username : '))
+Password = str(raw_input('Enter the password : '))
+print(''' What do you want to do?
+          1. Like posts
+          2. Comment on posts
+          3. Follow Unfollow
+          ''')
+Valid_inputs= [1, 2, 3]
+
+choice = input('Enter your choice : ')
+if choice not in Valid_inputs :
+    print("Not a valid choice!")
+else :
+    User = InstagramBot(Username, Password)
+    User.login()
+    if choice == 1:
+        Hashtags = []
+        print("Enter the hashtags(press 0 to stop) :")
+        while(True):
+            hashtag = raw_input()
+            if hashtag == '0' :
+                break
+            else :
+                Hashtags.append(hashtag)
+
+        for elem in Hashtags:
+            print("Liking pictures in hashtag {}........ ".format(elem))
+            User.like_picture(elem)
